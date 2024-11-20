@@ -16,6 +16,20 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+require("lspconfig").pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { "*" },
+      },
+    },
+  },
+}
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
 --   on_attach = nvlsp.on_attach,
