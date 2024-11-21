@@ -1,0 +1,1 @@
+require "nvchad.configs.cmp"

@@ -17,6 +17,7 @@ return {
 
   {
     "williamboman/mason.nvim",
+    -- require("nvchad.mason").install_all(),
     opts = {
       ensure_installed = {
         "ruff",
@@ -46,7 +47,7 @@ return {
 
   {
     "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy",
+    event = "LspAttach", --or VeryLazy
     config = function()
       require "configs.inline-diagnostics"
     end,
@@ -55,28 +56,9 @@ return {
   {
     "mfussenegger/nvim-lint",
     dependencies = { "williamboman/mason.nvim" },
-    event = "VeryLazy",
+    event = "LspAttach",
     config = function()
       require "configs.nvim-lint"
     end,
   },
-
-  "nvim-lua/plenary.nvim",
-
-  {
-    "nvchad/ui",
-    config = function()
-      require "nvchad"
-    end,
-  },
-
-  {
-    "nvchad/base46",
-    lazy = true,
-    build = function()
-      require("base46").load_all_highlights()
-    end,
-  },
-
-  "nvzone/volt",
 }
