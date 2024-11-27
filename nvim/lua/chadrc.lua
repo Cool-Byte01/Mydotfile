@@ -10,11 +10,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 })
 
 M.base46 = {
-  theme = "everblush",
-  -- hl_override = {
-  --   Comment = { italic = true, bg = "nord_blue" },
-  -- CmpSel = { bg = "blue" },
-  -- },
+  theme = "kanagawa",
 
   -- hl_override = {
   -- 	Comment = { italic = true },
@@ -24,23 +20,14 @@ M.base46 = {
 
 M.ui = {
   cmp = {
-    icons = true,
-    style = "flat_dark",
     icons_left = true,
+    style = "flat_dark",
     lspkind_text = false,
   },
-  telescope = { style = "bordered" },
+
   statusline = {
     theme = "minimal",
     separator_style = "round",
-  },
-}
-M.term = {
-  float = {
-    row = 0.5,
-    col = 0.3,
-    width = 1,
-    height = 0.5,
   },
 }
 

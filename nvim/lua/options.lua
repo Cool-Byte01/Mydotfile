@@ -2,7 +2,8 @@ require "nvchad.options"
 
 -- add yours here!
 
-local o = vim.opt_global
+local o = vim.o
+o.cursorlineopt = "both" -- to enable cursorline!
 o.clipboard = "unnamedplus"
 o.fileencoding = "utf-8"
 o.swapfile = false

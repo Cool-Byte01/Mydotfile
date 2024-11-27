@@ -8,9 +8,7 @@ return {
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
-    dependencies = { "williamboman/mason.nvim" },
     config = function()
-      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },
@@ -20,13 +18,7 @@ return {
     -- require("nvchad.mason").install_all(),
     opts = {
       ensure_installed = {
-        "ruff",
         "pyright",
-        -- "lua-language-server",
-        -- "stylua",
-        -- "html-lsp",
-        -- "css-lsp",
-        -- "prettier",
       },
     },
   },
@@ -41,24 +33,33 @@ return {
         "html",
         "css",
         "python",
+        "markdown",
       },
     },
   },
 
   {
+    "mfussenegger/nvim-lint",
+    -- dependencies = { "williamboman/mason.nvim" },
+    enable = true,
+    event = "VeryLazy",
+    config = function()
+      require "configs.nvim-lint"
+    end,
+  },
+
+  {
     "rachartier/tiny-inline-diagnostic.nvim",
-    event = "LspAttach", --or VeryLazy
+    event = "LspAttach", --VeryLazy or LspAttach
     config = function()
       require "configs.inline-diagnostics"
     end,
   },
 
+  { "nvzone/volt", lazy = true },
+  { "nvzone/menu", lazy = true },
   {
-    "mfussenegger/nvim-lint",
-    dependencies = { "williamboman/mason.nvim" },
-    event = "LspAttach",
-    config = function()
-      require "configs.nvim-lint"
-    end,
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
   },
 }
