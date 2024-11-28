@@ -41,8 +41,7 @@ return {
   {
     "mfussenegger/nvim-lint",
     -- dependencies = { "williamboman/mason.nvim" },
-    enable = true,
-    event = "VeryLazy",
+    event = "LspAttach",
     config = function()
       require "configs.nvim-lint"
     end,
@@ -54,12 +53,5 @@ return {
     config = function()
       require "configs.inline-diagnostics"
     end,
-  },
-
-  { "nvzone/volt", lazy = true },
-  { "nvzone/menu", lazy = true },
-  {
-    "nvzone/minty",
-    cmd = { "Shades", "Huefy" },
   },
 }
