@@ -1,3 +1,8 @@
+if true then
+  return {}
+end
+
+-- Default configuration
 require("tiny-inline-diagnostic").setup {
   signs = {
     left = "",

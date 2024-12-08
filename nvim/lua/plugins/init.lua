@@ -40,18 +40,57 @@ return {
 
   {
     "mfussenegger/nvim-lint",
-    -- dependencies = { "williamboman/mason.nvim" },
-    event = "LspAttach",
+    lazy = true,
+    event = "InsertLeave",
     config = function()
       require "configs.nvim-lint"
     end,
   },
 
+  -- {
+  --   "olrtg/nvim-emmet",
+  --   config = function()
+  --     vim.keymap.set({ "n", "v" }, "<leader>ge", require("nvim-emmet").wrap_with_abbreviation)
+  --   end,
+  -- },
+
+  { "nvzone/volt", lazy = true },
+
   {
-    "rachartier/tiny-inline-diagnostic.nvim",
-    event = "LspAttach", --VeryLazy or LspAttach
+    "nvzone/minty",
+    cmd = { "Shades", "Huefy" },
+  },
+
+  -- {
+  --   "rachartier/tiny-inline-diagnostic.nvim",
+  --   lazy = true,
+  --   event = "LspAttach", -- VeryLazy Or `LspAttach`
+  --   priority = 1000, -- needs to be loaded in first
+  --   config = function()
+  --     require "configs.inline-diagnostics"
+  --   end,
+  -- },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    -- event = "VeryLazy",
+    event = "InsertEnter",
+    lazy = true,
     config = function()
-      require "configs.inline-diagnostics"
+      require("nvim-surround").setup()
+    end,
+  },
+
+  {
+    "barrett-ruth/live-server.nvim",
+    lazy = true,
+    cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+    config = function()
+      require("live-server").setup {
+        port = 8080, -- Port server
+        -- browser_command = "google-chrome", -- Browser default
+      }
     end,
   },
 }
