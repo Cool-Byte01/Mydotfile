@@ -5,7 +5,6 @@ require "nvchad.options"
 local o = vim.o
 o.cursorlineopt = "both" -- to enable cursorline!
 o.clipboard = "unnamedplus"
-o.fileencoding = "utf-8"
 o.swapfile = false
 o.expandtab = true
 o.copyindent = true

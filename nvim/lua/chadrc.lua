@@ -11,11 +11,6 @@ local M = {}
 
 M.base46 = {
   theme = "everblush",
-
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
 }
 
 M.ui = {
@@ -29,6 +24,10 @@ M.ui = {
     theme = "minimal",
     separator_style = "round",
   },
+}
+
+M.lsp = {
+  signature = true,
 }
 
 return M

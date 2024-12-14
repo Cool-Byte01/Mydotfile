@@ -1,6 +1,8 @@
 require("lint").linters_by_ft = {
-  -- python = { "ruff" },
-  html = { "htmlhint" },
+  python = { "pylint" },
+  -- "mypy",
+  -- html = { "htmlhint" },
+  bash = { "shellcheck" },
 }
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufReadPost" }, {

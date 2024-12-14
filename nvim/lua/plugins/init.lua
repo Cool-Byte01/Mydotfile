@@ -15,10 +15,15 @@ return {
 
   {
     "williamboman/mason.nvim",
-    -- require("nvchad.mason").install_all(),
     opts = {
       ensure_installed = {
         "pyright",
+        "css-lsp",
+        "html-lsp",
+        "emmet-language-server",
+        "typescript-language-server",
+        "prettier",
+        "pylint",
       },
     },
   },
@@ -47,39 +52,11 @@ return {
     end,
   },
 
-  -- {
-  --   "olrtg/nvim-emmet",
-  --   config = function()
-  --     vim.keymap.set({ "n", "v" }, "<leader>ge", require("nvim-emmet").wrap_with_abbreviation)
-  --   end,
-  -- },
-
   { "nvzone/volt", lazy = true },
 
   {
     "nvzone/minty",
     cmd = { "Shades", "Huefy" },
-  },
-
-  -- {
-  --   "rachartier/tiny-inline-diagnostic.nvim",
-  --   lazy = true,
-  --   event = "LspAttach", -- VeryLazy Or `LspAttach`
-  --   priority = 1000, -- needs to be loaded in first
-  --   config = function()
-  --     require "configs.inline-diagnostics"
-  --   end,
-  -- },
-
-  {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    -- event = "VeryLazy",
-    event = "InsertEnter",
-    lazy = true,
-    config = function()
-      require("nvim-surround").setup()
-    end,
   },
 
   {
@@ -88,9 +65,26 @@ return {
     cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
     config = function()
       require("live-server").setup {
-        port = 8080, -- Port server
-        -- browser_command = "google-chrome", -- Browser default
+        port = 8080,
       }
     end,
+  },
+
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+    ft = "markdown",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
+
+  {
+    "okuuva/auto-save.nvim",
+    version = "*",
+    cmd = "ASToggle",
+    event = { "InsertLeave", "TextChanged" },
+    opts = {},
   },
 }

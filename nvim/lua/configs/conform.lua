@@ -9,6 +9,8 @@ local options = {
     css = { "prettier" },
     html = { "prettier" },
     javascript = { "prettier" },
+    bash = { "shfmt" },
+    markdown = { "prettier" },
   },
 
   format_on_save = {
