@@ -1,8 +1,10 @@
 require("lint").linters_by_ft = {
   python = { "pylint" },
-  -- "mypy",
-  -- html = { "htmlhint" },
-  bash = { "shellcheck" },
+  html = { "htmlhint" },
+  css = { "stylelint" },
+  -- bash = { "shellcheck" },
+  javascript = { "eslint_d" },
+  typescript = { "eslint_d" },
 }
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufReadPost" }, {

@@ -39,6 +39,7 @@ return {
         "css",
         "python",
         "markdown",
+        "javascript",
       },
     },
   },
@@ -52,39 +53,15 @@ return {
     end,
   },
 
-  { "nvzone/volt", lazy = true },
+  -- { "nvzone/volt", lazy = true },
 
-  {
-    "nvzone/minty",
-    cmd = { "Shades", "Huefy" },
-  },
+  -- {
+  --   "nvzone/minty",
+  --   cmd = { "Shades", "Huefy" },
+  -- },
 
-  {
-    "barrett-ruth/live-server.nvim",
-    lazy = true,
-    cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
-    config = function()
-      require("live-server").setup {
-        port = 8080,
-      }
-    end,
-  },
-
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = false,
-    ft = "markdown",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-tree/nvim-web-devicons",
-    },
-  },
-
-  {
-    "okuuva/auto-save.nvim",
-    version = "*",
-    cmd = "ASToggle",
-    event = { "InsertLeave", "TextChanged" },
-    opts = {},
-  },
+  -- {
+  --   "ahmedkhalf/project.nvim",
+  --   opts = {},
+  -- },
 }

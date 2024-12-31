@@ -8,7 +8,7 @@ local servers = {
   "html",
   "cssls",
   "ts_ls",
-  "bashls",
+  -- "bashls",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"

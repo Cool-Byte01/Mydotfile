@@ -11,13 +11,14 @@ local M = {}
 
 M.base46 = {
   theme = "everblush",
+  integrations = { "trouble" },
 }
 
 M.ui = {
   cmp = {
+    lspkind_text = false,
     icons_left = true,
     style = "flat_dark",
-    lspkind_text = false,
   },
 
   statusline = {
